@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { UserPageComponent } from '../user/user-page/user-page.component';
+import { Routes, RouterModule } from '@angular/router';
+import { LoginPageComponent } from '../user/login-page/login-page.component';
+
 
 const routes: Routes = [
-  { path: '', component: UserPageComponent }
-  // { path: ':id', component: ViewProfileComponent, canActivate: [AuthGuard]},
+  { path: '', component: LoginPageComponent }
 ];
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

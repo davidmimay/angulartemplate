@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
-import { UserRoutingModule } from './user-routing.module';
 
-// Components
-import { BioComponent } from './bio/bio.component';
-import { UserPageComponent } from './user-page/user-page.component';
+import { UserRoutingModule } from './user-routing.module';
 import { GoogleSigninDirective } from './google-signin.directive';
-import { UpgradeComponent } from './upgrade/upgrade.component';
+import { EmailLoginComponent } from './email-login/email-login.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
-  declarations: [
-    BioComponent,
-    UserPageComponent,
-    GoogleSigninDirective,
-    UpgradeComponent
-  ],
+  declarations: [GoogleSigninDirective, EmailLoginComponent, LoginPageComponent],
+  exports: [GoogleSigninDirective],
   imports: [
     CommonModule,
-    UserRoutingModule,
     SharedModule,
+    UserRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class UserModule { }
